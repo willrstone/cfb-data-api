@@ -64,6 +64,29 @@ def get_off_plays():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route('/plays/defense', methods=['GET'])
+def get_def_plays():
+    try:
+        # Connect to PostgreSQL
+        connection = psycopg2.connect(**db_params)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
+
+        # Execute a query
+        cursor.execute("SELECT * FROM defense_plays")
+        rows = cursor.fetchall()
+        print(rows)
+
+        # Close the connection
+        cursor.close()
+        connection.close()
+
+        # Return data as JSON
+        return jsonify(rows)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':
