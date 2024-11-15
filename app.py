@@ -53,7 +53,7 @@ def get_off_plays():
         # Execute a query
         cursor.execute("SELECT * FROM offense_plays")
         rows = cursor.fetchall()
-        print(rows)
+        # print(rows)
 
         # Close the connection
         cursor.close()
@@ -76,7 +76,7 @@ def get_def_plays():
         # Execute a query
         cursor.execute("SELECT * FROM defense_plays")
         rows = cursor.fetchall()
-        print(rows)
+        # print(rows)
 
         # Close the connection
         cursor.close()
