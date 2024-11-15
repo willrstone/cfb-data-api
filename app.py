@@ -14,7 +14,7 @@ db_params = {
     'user': os.getenv('DB_USER'),
     'password': os.getenv('DB_PASSWORD'),
     'host': os.getenv('DB_HOST'),
-    'port': os.getenv('5432')
+    'port': os.getenv('6543')
 }
 
 # Endpoint to fetch data from PostgreSQL
